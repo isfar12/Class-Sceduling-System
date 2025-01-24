@@ -14,8 +14,7 @@ Step by Step Database creation and connection:
         courses VARCHAR(255) NOT NULL
     );
     ```
-    ![alt text](image-1.png)
-For tutorial purpose I changed the name of the Database, as I already have one
+    ![alt text](image-3.png)
 3. Now select the Go option located down right
 
 4. Now look at the left menu,  you can see the database name.
