@@ -68,7 +68,7 @@ public class Schedule {
         }
     }
 
-    // Display all bookings in a GUI table
+    // Display all bookings in a GUI with background image
     public void displayAllBookings() {
         if (bookings.isEmpty()) {
             JOptionPane.showMessageDialog(null,
@@ -77,7 +77,12 @@ public class Schedule {
             return;
         }
 
-        // Create a table to display all bookings
+        // Load background image
+        ImageIcon backgroundIcon = new ImageIcon("classroutine.jpg");
+        JLabel backgroundLabel = new JLabel(backgroundIcon);
+        backgroundLabel.setLayout(new BorderLayout()); // Use BorderLayout to position the table properly
+
+        // Create the table to display all bookings
         String[] columns = {"Instructor", "Course Code", "Room", "Start Time", "End Time"};
         Object[][] data = new Object[bookings.size()][5];
 
@@ -91,12 +96,27 @@ public class Schedule {
             data[i][4] = b.getTimeSlot().getEndTime().toString();
         }
 
-        // Create and display the table
+        // Create the JTable to display the data
         JTable bookingTable = new JTable(data, columns);
+        bookingTable.setFillsViewportHeight(true); // Allow table to fill the window
         JScrollPane scrollPane = new JScrollPane(bookingTable);
         scrollPane.setPreferredSize(new Dimension(500, 200));
 
-        JOptionPane.showMessageDialog(null, scrollPane, "All Bookings", JOptionPane.INFORMATION_MESSAGE);
+        // Customize JTable appearance (optional)
+        bookingTable.setFont(new Font("Arial", Font.PLAIN, 14));
+        bookingTable.setRowHeight(30); // Increase row height for readability
+        bookingTable.getTableHeader().setFont(new Font("Arial", Font.BOLD, 16));
+
+        // Add table to background panel
+        backgroundLabel.add(scrollPane, BorderLayout.CENTER);
+
+        // Create a new frame to display the bookings with the background image
+        JFrame frame = new JFrame("All Bookings");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(600, 400); // Adjust frame size
+        frame.setLocationRelativeTo(null); // Center the window
+        frame.setContentPane(backgroundLabel); // Set the background image as the content pane
+        frame.setVisible(true);
     }
 
     // Get all bookings for communication purposes
