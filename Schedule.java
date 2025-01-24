@@ -78,7 +78,7 @@ public class Schedule {
         }
 
         // Load background image
-        ImageIcon backgroundIcon = new ImageIcon("classroutine.jpg");
+        ImageIcon backgroundIcon = new ImageIcon("images/classroutine.jpg");
         JLabel backgroundLabel = new JLabel(backgroundIcon);
         backgroundLabel.setLayout(new BorderLayout()); // Use BorderLayout to position the table properly
 

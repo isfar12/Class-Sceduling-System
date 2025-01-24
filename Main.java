@@ -20,7 +20,7 @@ public class Main extends JFrame {
         setLayout(null); // Using absolute layout for background image
 
         // Set Background Image
-        ImageIcon bgImage = new ImageIcon("background.jpg"); // Path to image
+        ImageIcon bgImage = new ImageIcon("images/background.jpg"); // Path to image
         Image img = bgImage.getImage().getScaledInstance(600, 400, Image.SCALE_SMOOTH);
         background = new JLabel(new ImageIcon(img));
         background.setBounds(0, 0, 600, 400);

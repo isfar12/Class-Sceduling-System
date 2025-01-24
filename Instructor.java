@@ -30,7 +30,7 @@ public class Instructor extends User {
         instructorFrame.setLocationRelativeTo(null); // Center the window
 
         // Load background image
-        ImageIcon backgroundIcon = new ImageIcon("instructor.jpg");
+        ImageIcon backgroundIcon = new ImageIcon("images/instructor.jpg");
         JLabel backgroundLabel = new JLabel(backgroundIcon);
         backgroundLabel.setLayout(new GridBagLayout()); // Layout for centering components
 
