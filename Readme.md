@@ -4,8 +4,8 @@ Step by Step Database creation and connection:
 2. Select SQL option from the tab menu, then paste this command
 
     ```
-    CREATE DATABASE class;
-    USE class;
+    CREATE DATABASE classschedulerdb;
+    USE classschedulerdb;
 
     CREATE TABLE NewInstructors (
         id INT AUTO_INCREMENT PRIMARY KEY,
